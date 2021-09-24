@@ -6,7 +6,7 @@ class TestAppModels(TestCase):
     @classmethod
     def setUpTestData(cls):
         Phone_number.objects.create(name='rashmi', phone_num='9527412635')
-        Phone_number.objects.create(name='asmi', phone_num='9642753874')
+        
 
     def test_name_label(self):
         name_label = Phone_number.objects.get(name='rashmi')
