@@ -4,5 +4,5 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register('', PhoneViewSet, basename='todos')
+router.register('', PhoneViewSet, basename='phone')
 urlpatterns = router.urls

@@ -6,6 +6,7 @@ class TestAppModels(TestCase):
     @classmethod
     def setUpTestData(cls):
         Phone_number.objects.create(name='rashmi', phone_num='9527412635')
+        Phone_number.objects.create(name='asmi', phone_num='9642753874')
 
     def test_name_label(self):
         name_label = Phone_number.objects.get(name='rashmi')
@@ -13,14 +14,13 @@ class TestAppModels(TestCase):
         self.assertEqual(field_label, 'name')
 
     def test_first_name_max_length(self):
-        name = Phone_number.objects.get(id=1)
+        name = Phone_number.objects.get(name='rashmi')
         max_length = name._meta.get_field('name').max_length
         self.assertEqual(max_length, 100)
 
     def test_model_str(self):
         phone_n = Phone_number.objects.get(name='rashmi')
-        expected_object= f'{phone_n.name}, {phone_n.phone_num}'
-        self.assertEqual(str(phone_n), expected_object)
+        self.assertEqual(phone_n.__str__(),"rashmi - 9527412635")
 
 
 

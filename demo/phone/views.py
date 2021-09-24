@@ -1,11 +1,12 @@
 
 from rest_framework import viewsets
-from phone import models
+from phone.models import Phone_number
 from .serializer import PhoneSerializer
 # Create your views here.
 
 
+
 class PhoneViewSet(viewsets.ModelViewSet):
-    queryset = models.Phone_number.objects.all()
+    queryset = Phone_number.objects.all()
     serializer_class = PhoneSerializer
 
